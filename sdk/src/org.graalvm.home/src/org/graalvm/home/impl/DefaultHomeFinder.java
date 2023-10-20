@@ -188,11 +188,12 @@ public final class DefaultHomeFinder extends HomeFinder {
                 throw new AssertionError("Java home is not reachable.");
             }
 
-            if (Files.exists(javaHome.resolve(Paths.get("lib", "modules")))) {
-                home = javaHome;
-            } else {
-                throw new AssertionError("Missing jimage in java.home: " + javaHome);
-            }
+//            if (Files.exists(javaHome.resolve(Paths.get("lib", "modules")))) {
+//                home = javaHome;
+//            } else {
+//                throw new AssertionError("Missing jimage in java.home: " + javaHome);
+//            }
+            home = javaHome;
 
             verbose("GraalVM home found by java.home property as: ", home);
             return home;
